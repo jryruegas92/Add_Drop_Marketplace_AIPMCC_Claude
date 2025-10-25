@@ -202,7 +202,7 @@ export default function ProfilePage() {
                       <select
                         value={selectedClassId}
                         onChange={(e) => setSelectedClassId(e.target.value)}
-                        className="w-full border rounded px-3 py-2"
+                        className="w-full border rounded px-3 py-2 text-gray-900"
                         required
                       >
                         <option value="">Choose a class...</option>
@@ -261,7 +261,7 @@ export default function ProfilePage() {
                     type="text"
                     value={profileData.name}
                     onChange={(e) => setProfileData({ ...profileData, name: e.target.value })}
-                    className="w-full border rounded px-3 py-2"
+                    className="w-full border rounded px-3 py-2 text-gray-900"
                     required
                   />
                 </div>
@@ -282,7 +282,7 @@ export default function ProfilePage() {
                   <select
                     value={profileData.program_type}
                     onChange={(e) => setProfileData({ ...profileData, program_type: e.target.value as ProgramType })}
-                    className="w-full border rounded px-3 py-2"
+                    className="w-full border rounded px-3 py-2 text-gray-900"
                   >
                     <option value="">Select a program</option>
                     {Object.values(ProgramType).map((type) => (
@@ -299,7 +299,7 @@ export default function ProfilePage() {
                     type="number"
                     value={profileData.graduation_year}
                     onChange={(e) => setProfileData({ ...profileData, graduation_year: e.target.value })}
-                    className="w-full border rounded px-3 py-2"
+                    className="w-full border rounded px-3 py-2 text-gray-900"
                     placeholder="2025"
                   />
                 </div>
@@ -310,7 +310,7 @@ export default function ProfilePage() {
                     type="tel"
                     value={profileData.phone}
                     onChange={(e) => setProfileData({ ...profileData, phone: e.target.value })}
-                    className="w-full border rounded px-3 py-2"
+                    className="w-full border rounded px-3 py-2 text-gray-900"
                     placeholder="510-555-0123"
                   />
                 </div>

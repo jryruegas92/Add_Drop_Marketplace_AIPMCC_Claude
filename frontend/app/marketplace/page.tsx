@@ -97,7 +97,7 @@ export default function MarketplacePage() {
               <select
                 value={postType}
                 onChange={(e) => setPostType(e.target.value as PostType)}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-gray-900"
                 required
               >
                 <option value={PostType.DROPPING_OPEN}>Dropping Class - Open to Offers</option>
@@ -112,7 +112,7 @@ export default function MarketplacePage() {
                 <select
                   value={classDroppingId}
                   onChange={(e) => setClassDroppingId(e.target.value)}
-                  className="w-full border rounded px-3 py-2"
+                  className="w-full border rounded px-3 py-2 text-gray-900"
                   required
                 >
                   <option value="">Select a class</option>
@@ -131,7 +131,7 @@ export default function MarketplacePage() {
                 <select
                   value={classWantedId}
                   onChange={(e) => setClassWantedId(e.target.value)}
-                  className="w-full border rounded px-3 py-2"
+                  className="w-full border rounded px-3 py-2 text-gray-900"
                   required
                 >
                   <option value="">Select a class</option>
@@ -149,7 +149,7 @@ export default function MarketplacePage() {
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-gray-900"
                 rows={3}
                 placeholder="Any additional information..."
               />
@@ -161,7 +161,7 @@ export default function MarketplacePage() {
                 type="text"
                 value={timing}
                 onChange={(e) => setTiming(e.target.value)}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-gray-900"
                 placeholder="e.g., Week 1 of add/drop"
               />
             </div>
@@ -238,7 +238,7 @@ export default function MarketplacePage() {
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-gray-900"
                 rows={3}
                 placeholder="Add a message to your offer..."
               />
@@ -299,12 +299,12 @@ export default function MarketplacePage() {
             placeholder="Search classes..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="flex-1 border rounded px-4 py-2"
+            className="flex-1 border rounded px-4 py-2 text-gray-900"
           />
           <select
             value={filterType}
             onChange={(e) => setFilterType(e.target.value as PostType | '')}
-            className="border rounded px-4 py-2"
+            className="border rounded px-4 py-2 text-gray-900"
           >
             <option value="">All Post Types</option>
             <option value={PostType.DROPPING_OPEN}>Dropping - Open</option>
