@@ -23,6 +23,8 @@ export class ApiClient {
       ...options.headers,
     };
 
+    console.log(`🔵 API Request: ${options.method || 'GET'} ${url}`);
+
     try {
       const response = await fetch(url, {
         ...options,
@@ -32,12 +34,22 @@ export class ApiClient {
       const data = await response.json();
 
       if (!response.ok) {
+        console.error(`🔴 API Error ${response.status}:`, data);
         throw new Error(data.error || `HTTP error! status: ${response.status}`);
       }
 
+      console.log(`🟢 API Success:`, data);
       return data;
     } catch (error) {
-      console.error('API request failed:', error);
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        console.error('🔴 Network Error - Cannot reach backend at:', this.baseUrl);
+        console.error('   Check that:');
+        console.error('   1. Backend is running on port 5000');
+        console.error('   2. NEXT_PUBLIC_API_URL in .env.local is correct');
+        console.error('   3. In Codespaces, use the forwarded URL from PORTS tab');
+        throw new Error(`Cannot reach backend API at ${this.baseUrl}. Is the backend running?`);
+      }
+      console.error('🔴 API request failed:', error);
       throw error;
     }
   }
